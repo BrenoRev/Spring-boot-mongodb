@@ -1,5 +1,6 @@
 package com.brenodev.workshopmongo.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +30,11 @@ public class PostService {
 		// Metodo de Query com parametros
 		return repo.searchTitle(text);
 		
+	}
+	
+	public List<Post> fullSearch(String text, Date minDate, Date maxDate){
+		// ADICIONAR 24 HORAS A DATA
+		maxDate = new Date(maxDate.getTime()+24*60*60*1000);
+		return repo.fullSearch(text, minDate, maxDate);
 	}
 	}
