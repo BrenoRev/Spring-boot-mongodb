@@ -42,6 +42,14 @@ public class User implements Serializable{
 		return posts;
 	}
 
+	
+	/**
+	 * @param posts the posts to set
+	 */
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
+	}
+
 	/**
 	 * @return the id
 	 */
