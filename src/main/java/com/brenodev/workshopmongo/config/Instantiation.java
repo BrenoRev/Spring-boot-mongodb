@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.brenodev.workshopmongo.domain.User;
 import com.brenodev.workshopmongo.repository.UserRepository;
 
-@Configuration
+@Configuration 
 public class Instantiation implements CommandLineRunner{
 
 	@Autowired
