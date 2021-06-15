@@ -19,7 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.brenodev.workshopmongo.domain.Post;
 import com.brenodev.workshopmongo.domain.User;
 import com.brenodev.workshopmongo.dto.UserDTO;
-import com.brenodev.workshopmongo.repository.PostRepository;
 import com.brenodev.workshopmongo.services.UserService;
 
 @RestController
