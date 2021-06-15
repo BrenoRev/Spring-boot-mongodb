@@ -1,12 +1,14 @@
 package com.brenodev.workshopmongo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.brenodev.workshopmongo.domain.User;
 import com.brenodev.workshopmongo.repository.UserRepository;
+import com.brenodev.workshopmongo.services.exception.ObjectNotFoundException;
 
 @Service
 public class UserService {
@@ -17,4 +19,11 @@ public class UserService {
 	public List<User> findAll(){
 		return repo.findAll();
 	}
-}
+	
+	public User findById(String id) {
+		Optional<User> obj = repo.findById(id);
+		// RETORNA UM OBJETO OU UMA EXCEÇÃO
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+
+	}
+	}
