@@ -1,8 +1,11 @@
 package com.brenodev.workshopmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 // PARA MOSTRAR QUE A CLASSE É UMA COLEÇÃO DO MONGODB PRECISA USAR O @Document
@@ -15,6 +18,12 @@ public class User implements Serializable{
 	private String name;
 	private String email;
 	
+	// FAZER O USER RECONHECER OS POSTS POR REFERENCIA
+	@DBRef(lazy = true)
+	// LAZY = TRUE SERVE PARA SÓ MOSTRAR A REFERÊNCIA QUANDO FOR EXPLICITADO O PEDIDO DOS USUARIOS NO POST
+	// QUANDO PEDIR SOMENTE OS USUARIOS NÃO IRA RETORNAR A REFERÊNCIA
+	private List<Post> posts = new ArrayList<>();
+	
 	public User() {
 	}
 
@@ -23,6 +32,14 @@ public class User implements Serializable{
 		this.id = id;
 		this.name = name;
 		this.email = email;
+	}
+
+	
+	/**
+	 * @return the posts
+	 */
+	public List<Post> getPosts() {
+		return posts;
 	}
 
 	/**
