@@ -1,4 +1,4 @@
-# MongoDB em um Projeto Spring Boot com Java [ NoSQL ]
+# MongoDB em um Projeto Spring Boot Java [ NoSQL ]
 
 <p> Projeto feito pelo de Java do Nélio Alves </p>
   <p>Ferramentas utilizadas</p>
